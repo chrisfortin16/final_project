@@ -3,73 +3,48 @@ var logger = require('morgan');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var expressSession = require('express-session');
-var passport = require('passport');
-var localStrategy = require('passport-local').Strategy;
+var passport = require('./auth');
 var mongoose = require('mongoose');
+var db = require('./db');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 var Admin = require('./server/models/admin.js');
 //var routes = require('./routes/api.js');
 
-passport.use('login', new localStrategy({
-  usernameField: 'email',
-  passwordField: 'password',
-  passReqToCallback: true
-},
-function(req, email, password, done){
-  process.nextTick(function(){
-    Admin.findOne({'email': email, 'password': password}, function(err, Admin){
-      if(Admin)
-        return done(null, Admin);
-      if(err)
-        return err;
-      return false;
-    });
-  });
-}
-));
 
-passport.serializeUser(function(Admin, done) {
-    done(null, Admin);
-});
-
-passport.deserializeUser(function(Admin, done) {
-    done(null, Admin);
-});
 
 // Init App
 var app = express();
 
-// Connect to the database
-mongoose.connect('mongodb://localhost/final_project');
+// function isLoggedIn(req, res, next) {
+//   if(req.isAuthenticated())
+//     return next();
+//     res.redirect('/bob');
+//   }
 
-function isLoggedIn(req, res, next) {
-  if(req.isAuthenticated())
-    return next();
-    res.redirect('/home');
-  }
-
-app.get('/home', isLoggedIn, function(req, res) {
-  res.render('./client/partials/home.html', {
-    admin: req.Admin
-  });
-});
+// app.get('/home', isLoggedIn, function(req, res) {
+//   res.render('./client/partials/home.html', {
+//     admin: req.Admin
+//   });
+// });
 
 // Define middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Express Session
-app.use(expressSession({
-  secret: 'Hello World',
-  resave: true,
-  saveUninitialized: true
-}));
-
 // Passport init
+app.use(session({
+    secret: 'keyboard cat',
+    store: new MongoStore({ mongooseConnection: db }),
+    proxy: true,
+    resave: true,
+    saveUninitialized: true
+}))
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Set Static Folder
 app.use(express.static('client'));
@@ -84,12 +59,21 @@ app.get('/logout', function(req, res) {
   res.send(200);
 });
 
-app.post('/api/login', passport.authenticate('login'), function(req, res) {
+app.get('/login', function(req, res) {
+  console.log("data ", res);
+  res.send(200);
+});
+
+app.post('/api/login', passport.authenticate('login', {
+  failureRedirect: '/',
+  successRedirect: '/home'
+}), function(req, res) {
+  res.json(req.user)
   res.redirect('/home');
 });
 
 app.use('/api', require('./api/index.js'));
 
-var server = app.listen(process.env.PORT || 3000, function(){
+var server = app.listen(process.env.PORT || 4000, function(){
   console.log("running on port", server.address().port);
 });

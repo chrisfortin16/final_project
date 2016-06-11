@@ -1,3 +1,4 @@
+
 angular.module('fortinsApp').controller('loginCtrl',
   ['$scope', '$rootScope', '$location', '$http',
   function ($scope, $rootScope, $location, $http) {
