@@ -11,7 +11,9 @@ var adminSchema = new Schema({
   password: String,
   street_address: String,
   postal_code: String,
-  postion: String,
+  position: String,
+  phone_number: String,
+  date_created: Date
 });
 
 var Admin = mongoose.model('Admin', adminSchema);

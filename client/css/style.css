@@ -1,3 +1,4 @@
+
 body{
   background: #fff;
   margin: 0;
@@ -5,10 +6,77 @@ body{
 .container{
   width: 1024px;
   margin: 0 auto;
+  padding: 0;
 }
-
+#section1{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.phone_number{
+font-family: arial;
+display: inline;
+float: right;
+padding: 10px 10px 0 0;
+margin: 0;
+color: #666666;
+}
+h1{
+  margin: 0 auto;
+  text-align: center;
+  font-style: bold;
+  font-family: arial;
+  font-size: 36px;
+  padding-top: 40px;
+}
+.login_title{
+  font-family: arial;
+  font-size: 20px;
+  text-align: center;
+  padding: 60px 0;
+}
+.form{
+  width: 400px;
+  margin: 0 auto;
+}
+.login_email_label{
+  font-family: arial;
+  font-size: 18px;
+  padding: 2px 0;
+  display: block;
+}
+.login_password_label{
+  font-family: arial;
+  font-size: 18px;
+  margin-top: 16px;
+  padding: 2px 0;
+  display: block;
+}
+.login_email_input{
+  width: 400px;
+  height: 18px;
+}
+.login_password_input{
+  width: 400px;
+  height: 18px;
+}
+.login_button{
+  width: 406px;
+  margin-top: 35px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  line-height: auto;
+  color: #ffffff;
+  background-color: #111111;
+  border: none;
+}
+.login_button:hover{
+  color: #666666;
+}
 footer{
   margin: 0 auto;
+  height: 30px;
   text-align: center;
   font-size: 16px;
   font-family: Arial;

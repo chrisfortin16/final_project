@@ -12,8 +12,9 @@ angular.module('fortinsApp').controller('registerCtrl',
       var gender = $scope.gender;
       var street_address = $scope.street_address;
       var postal_code = $scope.postal_code;
-      var postion = $scope.postion;
-      var date_created = $scope.date_created;
+      var position = $scope.position;
+      var phone_number = $scope.phone_number;
+      var date_created = new Date();
 
       $http.post('/api/register', {
         email: email,
@@ -23,7 +24,9 @@ angular.module('fortinsApp').controller('registerCtrl',
         gender: gender,
         street_address: street_address,
         postal_code: postal_code,
-        postion: postion
+        position: position,
+        phone_number: phone_number,
+        date_created: date_created
       }).then(function(response) {
         console.log(response);
       })
@@ -35,8 +38,9 @@ angular.module('fortinsApp').controller('registerCtrl',
       $scope.gender = '';
       $scope.street_address = '';
       $scope.postal_code = '';
-      $scope.postion = '';
-      date_created = '';
+      $scope.position = '';
+      $scope.phone_number = '';
+      $scope.date_created = '';
 
     }
 }]);

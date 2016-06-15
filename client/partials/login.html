@@ -1,15 +1,50 @@
-<h2>Login</h2>
-<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
-<form class="form" action="/home" ng-submit="login()">
-  <div class="form-group">
-    <label>Email</label>
-    <input type="text" class="form-control" name="email" ng-model="email" required>
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-      <input type="password" class="form-control" name="password" ng-model="password" required>
+<section id="section1">
+  <h2 class="phone_number">(555) 523-2342</h2>
+  <h1>Fortins Delivery</h1>
+  <h1>Management Service</h1>
+  <h3 class="login_title">Login</h3>
+  <form class="form" action="/home" ng-submit="login()">
+    <div class="form-group">
+      <label class="login_email_label">Email</label>
+      <input type="text" class="login_email_input" class="form-control" name="email" ng-model="email" required>
     </div>
-    <div>
-      <button type="submit" ng-disabled="disabled">Login</button>
+    <div class="form-group">
+      <label class="login_password_label">Password</label>
+        <input type="password" class="login_password_input" class="form-control" name="password" ng-model="password" required>
+      </div>
+      <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+      <div>
+        <button type="submit" class="login_button" ng-disabled="disabled">Login</button>
+      </div>
+  </form>
+</section>
+<section id="section2">
+  <h3>Service Overview</h3>
+    <div class="third_1">
+      <h4 class="bottom_border">Getting Started</h4>
+      <!-- <img src="image" alt="image"/> -->
+      <p></p>
     </div>
-</form>
+    <div class="third_2">
+      <h4 class="bottom_border">Migrate</h4>
+      <!-- <img src="image" alt="image"/> -->
+      <p></p>
+    </div>
+    <div class="third_3">
+      <h4class="bottom_border">Grow</h4>
+      <!-- <img src="image" alt="image"/> -->
+      <p></p>
+    </div>
+</section>
+<section id="section3">
+  <h3>Price Overview</h3>
+    <div class="third_1">
+      <h4>Free Version</h4>
+    </div>
+    <div class="third_2">
+      <h4>Standard Service</h4>
+    </div>
+    <div class="third_3">
+      <h4>Premium Full Service</h4>
+    </div>
+</section>

@@ -16,8 +16,9 @@ router.post('/register', function(req, res) {
     gender: req.body.gender,
     street_address: req.body.street_address,
     postal_code: req.body.postal_code,
-    postion: req.body.postion,
-    date_created: Date.now
+    phone_number: req.body.phone_number,
+    position: req.body.position,
+    date_created: req.body.date_created
   });
 
   admin.save(function(err){
