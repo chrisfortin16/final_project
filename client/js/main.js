@@ -18,6 +18,23 @@ fortinsApp.config(function ($routeProvider, $locationProvider) {
       controller: 'homeCtrl',
       access: {restricted: true}
     })
+    .when('/admins', {
+      templateUrl: '../partials/admins.html',
+      controller: 'adminsCtrl',
+      access: {restricted: true}
+    })
+    .when('/customers', {
+      templateUrl: '../partials/customers.html',
+      access: {restricted: true}
+    })
+    .when('/drivers', {
+      templateUrl: '../partials/drivers.html',
+      access: {restricted: true}
+    })
+    .when('/stats', {
+      templateUrl: '../partials/stats.html',
+      access: {restricted: true}
+    })
     .when('/logout', {
       controller: 'logoutController',
       access: {restricted: true}

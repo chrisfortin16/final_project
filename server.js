@@ -10,24 +10,9 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 var Admin = require('./server/models/admin.js');
-//var routes = require('./routes/api.js');
-
-
 
 // Init App
 var app = express();
-
-// function isLoggedIn(req, res, next) {
-//   if(req.isAuthenticated())
-//     return next();
-//     res.redirect('/bob');
-//   }
-
-// app.get('/home', isLoggedIn, function(req, res) {
-//   res.render('./client/partials/home.html', {
-//     admin: req.Admin
-//   });
-// });
 
 // Define middleware
 app.use(bodyParser.json());
@@ -49,10 +34,7 @@ app.use(passport.session());
 // Set Static Folder
 app.use(express.static('client'));
 
-// Get client folder
-app.get('*', function(req, res, next){
-  res.sendFile(__dirname + "/client/index.html");
-});
+
 
 app.get('/logout', function(req, res) {
   req.logout();
@@ -73,6 +55,13 @@ app.post('/api/login', passport.authenticate('login', {
 });
 
 app.use('/api', require('./api/index.js'));
+
+// Get client folder
+app.get('*', function(req, res, next){
+  console.log('coming in', req );
+  console.log('going out', res );
+  res.sendFile(__dirname + "/client/index.html");
+});
 
 var server = app.listen(process.env.PORT || 4000, function(){
   console.log("running on port", server.address().port);

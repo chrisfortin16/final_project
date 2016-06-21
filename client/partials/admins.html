@@ -1,0 +1,11 @@
+<h1>Admins</h1>
+
+<ul>
+  <li ng-repeat="admin in admins | limitTo: 5">
+    <p>
+      {{admin.first_name}}
+    </p>
+    <pre> {{admin | json}} </pre>
+
+  </li>
+</ul>

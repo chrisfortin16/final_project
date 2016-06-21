@@ -8,6 +8,7 @@ body{
   margin: 0 auto;
   padding: 0;
 }
+/*login page*/
 #section1{
   width: 100%;
   margin: 0;
@@ -29,15 +30,26 @@ h1{
   font-size: 36px;
   padding-top: 40px;
 }
+h3{
+  font-family: arial;
+  font-size: 20px;
+  padding: 5px 0;
+  clear: both;
+}
+p{
+  font-family: arial;
+  font-size: 16px;
+  line-height: 20px;
+}
+.form{
+  width: 400px;
+  margin: 0 auto;
+}
 .login_title{
   font-family: arial;
   font-size: 20px;
   text-align: center;
   padding: 60px 0;
-}
-.form{
-  width: 400px;
-  margin: 0 auto;
 }
 .login_email_label{
   font-family: arial;
@@ -74,10 +86,139 @@ h1{
 .login_button:hover{
   color: #666666;
 }
+#section2{
+  width: 100%;
+  margin-top: 100px;
+  padding: 0;
+}
+.gettingStarted{
+  margin-left: 112px;
+  padding: 5px;
+  width: 68px;
+}
+.migrate{
+  margin-left: 112px;
+  padding: 5px;
+  width: 68px;
+}
+.grow{
+  margin-left: 112px;
+  padding: 5px;
+  width: 68px;
+}.third_1{
+  width: 300px;
+  float: left;
+  display: inline;
+  padding: 0 0 20px 0;
+}
+.third_1{
+  width: 300px;
+  float: left;
+  display: inline;
+  padding: 0 0 20px 0;
+}
+.third_2{
+  width: 300px;
+  float: right;
+  display: inline;
+  margin-left: 63px;
+  padding: 0 0 20px 0;
+}
+.third_3{
+  width: 300px;
+  float: right;
+  display: inline;
+  padding: 0 0 20px 0;
+}
+#section3{
+  width: 100%;
+  margin-top: 100px;
+  padding: 0;
+  clear: both;
+}
+.bottom_border{
+  text-align: center;
+  border-bottom: solid 2px #666666;
+  padding-bottom: 10px;
+}
+.price_overview{
+  text-align: none;
+}
+.price_overview_border{
+  border-bottom: solid 2px #666666;
+  padding-top: 5px;
+}
+.box_1{
+  width: 250px;
+  height: 300px;
+  border: solid 2px #666666;
+  padding: 5px;
+}
+.box_2{
+  width: 250px;
+  height: 300px;
+  border: solid 2px #666666;
+  padding: 5px;
+}
+.box_3{
+  width: 250px;
+  height: 300px;
+  border: solid 2px #666666;
+  padding: 5px;
+}
+/*End of Login page*/
+/*Home page*/
+header{
+
+}
+.homepage_h1{
+  float: left;
+  display: block;
+  clear: both;
+}
+.account_logout_links{
+  float: right;
+    margin: 50px 0 0 0;
+  display: block;
+}
+.account_logout_links a{
+  color: #000000;
+  font-family: arial;
+  font-size: 16px;
+}
+.account_logout_links a:hover{
+  color: #666666;
+  text-decoration: underline;
+}
+nav{
+  clear: both;
+}
+nav ul{
+  display: inline;
+  list-style-type: none;
+  float: left;
+  padding: 0;
+}
+nav li{
+  float: left;
+  padding: 20px 72px;
+}
+nav a{
+  color: #000000;
+  font-family: arial;
+  font-size: 18px;
+  text-decoration: none;
+}
+nav a:hover{
+  color: #666666;
+  text-decoration: underline;
+}
+
 footer{
   margin: 0 auto;
   height: 30px;
   text-align: center;
   font-size: 16px;
   font-family: Arial;
+  clear: both;
 }

@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 var Admin = require('../server/models/admin.js');
 
-//var admin = new Object();
+router.use(bodyParser.json())
 
 router.post('/register', function(req, res) {
   var admin = new Admin({
@@ -32,6 +32,16 @@ router.post('/register', function(req, res) {
     });
   });
 });
+
+router.get('/admins', function (req, res, next) {
+  Admin.find()
+  .sort('-date')
+  .exec(function (err, admins) {
+    if (err) { next(err) }
+    res.json(admins)
+  })
+})
+
 
 //authenticate login
 router.post('/', function(req, res, next) {
