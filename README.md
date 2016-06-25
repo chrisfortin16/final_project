@@ -1,6 +1,6 @@
-# Delivery Management Service Management Website
+# Delivery Management Service
 
-##Chris Fortins' Final Project
+##Chris Fortins' Final Project Management Website
 
 ## Setting Up
 Clone the repository to your machine using ssh.
