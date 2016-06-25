@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "bower": "1.7.9",
+    "morgan": "^1.7.0",
     "nodemon": "1.9.2"
   }
 }

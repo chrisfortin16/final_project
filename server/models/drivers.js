@@ -20,4 +20,4 @@ var driverSchema = new Schema({
 
 var Driver = mongoose.model('Driver', driverSchema);
 
-module.exports = Admin;
+module.exports = Driver;

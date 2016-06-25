@@ -1,11 +1,50 @@
-<h1>Admins</h1>
+<header>
+  <h1 class="homepage_h1">Company Name</h1>
+  <div class="account_logout_links">
+    <a href="home" title="link to my account page">My Account</a> |
+    <a href="login" title="link to logout page">Logout</a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="home" title="link to Homepage">Home</a></li>
+      <li><a href="drivers" title="link to Drivers page">Driver</a></li>
+      <li><a href="admins" title="link to Admins page">Admins</a></li>
+      <li><a href="customers" title="link to Customers page">Customers</a></li>
+      <li><a href="stats" title="link to Stats page">Stats</a></li>
+    </ul>
+  </nav>
+</header>
+<h2>Admins</h2>
 
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Phone Number</th>
+    <th>Street Address</th>
+    <th>Email</th>
+    <th>Zip Code</th>
+    <th>More</th>
+  </tr>
+  <tr ng-repeat="admin in admins">
+    <td>{{admin.first_name}}</td>
+    <td>{{admin.last_name}}</td>
+    <td>{{admin.gender}}</td>
+    <td>{{admin.phone_number}}</td>
+    <td>{{admin.street_address}}</td>
+    <td>{{admin.email}}</td>
+    <td>{{admin.postal_code}}</td>
+    <td><a href="#" title="#">More</a></td>
+  </tr>
+</table>
+<!--
 <ul>
-  <li ng-repeat="admin in admins | limitTo: 5">
+  <li ng-repeat="admin in admins">
     <p>
       {{admin.first_name}}
     </p>
     <pre> {{admin | json}} </pre>
 
   </li>
-</ul>
+</ul> -->

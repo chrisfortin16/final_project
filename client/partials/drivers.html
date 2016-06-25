@@ -1,1 +1,40 @@
-<h1>Drivers</h1>
+<header>
+  <h1 class="homepage_h1">Company Name</h1>
+  <div class="account_logout_links">
+    <a href="home" title="link to my account page">My Account</a> |
+    <a href="login" title="link to logout page">Logout</a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="home" title="link to Homepage">Home</a></li>
+      <li><a href="drivers" title="link to Drivers page">Driver</a></li>
+      <li><a href="admins" title="link to Admins page">Admins</a></li>
+      <li><a href="customers" title="link to Customers page">Customers</a></li>
+      <li><a href="stats" title="link to Stats page">Stats</a></li>
+    </ul>
+  </nav>
+</header>
+<h2>Drivers</h2>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Deliveries Made</th>
+    <th>Orders Todo</th>
+    <th>Email</th>
+    <th>Date Created</th>
+    <th>More</th>
+  </tr>
+  <tr ng-repeat="driver in drivers">
+    <td>{{driver.first_name}}</td>
+    <td>{{driver.last_name}}</td>
+    <td>{{driver.gender}}</td>
+    <td>{{driver.deliveries_made}}</td>
+    <td>{{driver.orders_todo}}</td>
+    <td>{{driver.email}}</td>
+    <td>{{driver.date_created}}</td>
+    <td><a href="#" title="#">More</a></td>
+  </tr>
+</table>

@@ -30,6 +30,9 @@ h1{
   font-size: 36px;
   padding-top: 40px;
 }
+h2{
+  font-family: arial;
+}
 h3{
   font-family: arial;
   font-size: 20px;
@@ -213,7 +216,26 @@ nav a:hover{
   color: #666666;
   text-decoration: underline;
 }
-
+nav a:active{
+  text-decoration: underline;
+}
+table{
+  width:100%;
+  padding: 5px;
+}
+tr{
+  height: 25px;
+  padding: 0 5px 0 0;
+}
+th{
+  float: none;
+  margin: 0;
+  padding: 0 5px 0 0;
+  text-align: left;
+}
+td{
+  padding: 2px;
+}
 footer{
   margin: 0 auto;
   height: 30px;

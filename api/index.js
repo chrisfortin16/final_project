@@ -4,8 +4,8 @@ var router = require('express').Router();
 var bodyParser = require('body-parser');
 
 var Admin = require('../server/models/admin.js');
-
-router.use(bodyParser.json())
+var Driver = require('../server/models/drivers.js');
+var Customer = require('../server/models/customer.js');
 
 router.post('/register', function(req, res) {
   var admin = new Admin({
@@ -20,51 +20,50 @@ router.post('/register', function(req, res) {
     position: req.body.position,
     date_created: req.body.date_created
   });
-
   admin.save(function(err){
     if(err) throw err;
-    console.log('new admin' + admin);
+    console.log('new admin saved successfully');
   });
+});
 
-  passport.authenticate('local')(req, res, function () {
-    return res.status(200).json({
-      status: 'Registration successful!'
+//authenticate login
+router.get('/home', function(req, res) {
+  console.log(req.session.passport.admin._id);
+  Admin.find({adminId : req.session.passport.admin._id}, function(err, data) {
+    res.json({
+      data: data,
+      sessions : req.session
     });
-  });
+  })
 });
 
 router.get('/admins', function (req, res, next) {
   Admin.find()
-  .sort('-date')
+  .sort('date_created')
   .exec(function (err, admins) {
     if (err) { next(err) }
     res.json(admins)
   })
-})
-
-
-//authenticate login
-router.post('/', function(req, res, next) {
-  passport.authenticate('local', function(err, admin, info) {
-    if (err) {
-      return next(err);
-    }
-    if (!admin) {
-      return res.status(401).json({
-        err: info
-      });
-    }
-    req.logIn(admin, function(err) {
-      if (err) {
-        return res.status(500).json({
-          err: 'Could not log in user'
-        });
-      }
-      res.status(200).json({
-        status: 'Login successful!'
-      });
-    });
-  })(req, res, next);
 });
+
+router.get('/drivers', function (req, res, next) {
+  Driver.find()
+  .sort('date_created')
+  .exec(function (err, drivers) {
+    if (err) { next(err) }
+    console.log('drivers:', drivers);
+    res.json(drivers)
+  })
+});
+
+router.get('/customers', function (req, res, next) {
+  Customer.find()
+  .sort('last_name')
+  .exec(function (err, customers) {
+    if (err) { next(err) }
+    res.json(customers)
+  })
+});
+
 
 module.exports = router;
