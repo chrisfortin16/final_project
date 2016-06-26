@@ -27,8 +27,9 @@ angular.module('fortinsApp').controller('registerCtrl',
         position: position,
         phone_number: phone_number,
         date_created: date_created
-      }).then(function(response) {
-        console.log(response);
+      }).then(function(data) {
+        $location.path('/');
+        console.log("Data Coming Back", data);
       })
 
       $scope.email = '';

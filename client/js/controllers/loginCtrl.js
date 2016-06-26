@@ -6,16 +6,13 @@ angular.module('fortinsApp').controller('loginCtrl',
       var email = $scope.email;
       var password = $scope.password;
 
-      // console.log(email);
-      // console.log(password);
-
       $http.post('/api/login', {
         email: email,
         password: password
       })
       .success(function(data) {
         $location.path('/home');
-        console.log("Successful! Admin Authenticated", data)
+        console.log("Successful! Admin Authenticated", data.passport)
       })
       .error(function(err) {
         console.log("Failure! Admin Not Authenticated", err)

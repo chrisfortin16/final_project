@@ -28,13 +28,13 @@ router.post('/register', function(req, res) {
 
 //authenticate login
 router.get('/home', function(req, res) {
-  console.log(req.session.passport.admin._id);
-  Admin.find({adminId : req.session.passport.admin._id}, function(err, data) {
+  console.log(req.session.passport.user._id);
+  // Admin.find({_id : req.session.passport.user._id}, function(err, data) {
     res.json({
-      data: data,
+      // data: data,
       sessions : req.session
     });
-  })
+  // })
 });
 
 router.get('/admins', function (req, res, next) {

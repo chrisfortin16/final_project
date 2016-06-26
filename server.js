@@ -53,11 +53,11 @@ function isLoggedIn(req, res, next) {
 }
 
 // Redirects admin to homepage if they are authenticated
-app.get('/home', isLoggedIn, function(req, res) {
-  res.render('./client/partials/home.html', {
-    admin : req.admin
-  });
-});
+// app.get('/home', isLoggedIn, function(req, res) {
+//   res.render('./client/partials/home.html', {
+//     admin : req.admin
+//   });
+// });
 
 // Define middleware
 app.use(cookieParser());
