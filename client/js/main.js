@@ -33,8 +33,8 @@ fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvid
     })
     .otherwise('/')
 }])
-.run(["$rootScope", "$http", function($rootScope, $http){
+.run(function($rootScope, $http){
   $rootScope.logout = function(){
     $http.post('/logout');
   };
-}]);
+});

@@ -39,6 +39,17 @@ h3{
   padding: 5px 0;
   clear: both;
 }
+h4{
+  font-family: arial;
+  padding: 5px 0;
+  margin: 15px 0 0 0;
+  font-size: 16px;
+  font-style:normal;
+}
+h5{
+  padding: 0;
+  margin: 0;
+}
 p{
   font-family: arial;
   font-size: 16px;
@@ -170,10 +181,8 @@ p{
   padding: 5px;
 }
 /*End of Login page*/
-/*Home page*/
-header{
 
-}
+/*Home page*/
 .homepage_h1{
   float: left;
   display: block;
@@ -219,6 +228,113 @@ nav a:hover{
 nav a:active{
   text-decoration: underline;
 }
+.split{
+  width: 500px;
+  float: left;
+}
+.border_top{
+  border-top: solid 2px #666666;
+  padding-top: 10px;
+}
+#chart{
+  width: 500px;
+  height: 500px;
+  float: right;
+  display: inline;
+  background-color: lightgray;
+  margin: 50px 0 0 0;
+}
+#message_box{
+  clear: both;
+  padding: 80px 0 50px 0;
+}
+#message_box h4{
+  text-align: center;
+}
+#message_box form{
+  width: 600px;
+  margin: 0 auto;
+}
+.message_box_label{
+  font-family: arial;
+  font-size: 18px;
+  padding: 15px 0 5px 0;
+  display: block;
+}
+.subject_message_box_input{
+  width: 200px;
+  height: 18px;
+}
+.message_message_box_input{
+  width: 600px;
+  height: 18px;
+}
+.message_button{
+  width: 96px;
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  line-height: auto;
+  color: #ffffff;
+  background-color: #111111;
+  border: none;
+}
+.message_button:hover{
+  color: #666666;
+}
+.custom_counter{
+  font-family: arial;
+  font-size: 18px;
+  font-weight: bold;
+}
+.driver_column{
+  width: 500px;
+  float: left;
+}
+.driver_column h3{
+  text-align: center;
+}
+.admin_column{
+  width: 500px;
+  float: right;
+}
+.admin_column h3{
+  text-align: center;
+}
+#quick_stats h3{
+  padding: 50px 0 0 0;
+}
+#quick_stats h4{
+ border-bottom: solid 2px #666666;
+}
+.quick_stats_text{
+  margin: 0 auto;
+  width: 800px;
+}
+span{
+  font-size: 14px;
+  color: lightgray;
+}
+pre{
+  font-family: arial;
+  font-size: 14px;
+  float: right;
+  margin: 0;
+}
+#about_us{
+  padding: 50px 0 0 0;
+}
+#about_us h3{
+  margin: 0;
+  padding: 25px 0 0 0;
+}
+.top_border{
+  border-top: solid 2px #666666;
+  padding-top: 10px;
+}
+
+/*Customers Admin and Drivers page styles*/
 table{
   width:100%;
   padding: 5px;
@@ -236,6 +352,7 @@ th{
 td{
   padding: 2px;
 }
+
 footer{
   margin: 0 auto;
   height: 30px;

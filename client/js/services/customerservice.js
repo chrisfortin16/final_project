@@ -3,7 +3,7 @@ angular.module('fortinsApp')
   this.fetch = function () {
     return $http.get('/api/customers')
     .then(function (response) {
-      console.log('Coming back', response)
+      //console.log('Customers Coming back', response)
       return response.data
     })
   }

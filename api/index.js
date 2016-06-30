@@ -28,13 +28,13 @@ router.post('/register', function(req, res) {
 
 //authenticate login
 router.get('/home', function(req, res) {
-  console.log(req.session.passport.user._id);
-  // Admin.find({_id : req.session.passport.user._id}, function(err, data) {
+  console.log("loggedin admin id", req.session.passport.user._id);
+   Admin.findOne({_id : req.session.passport.user._id}, function(err, data) {
     res.json({
-      // data: data,
-      sessions : req.session
+      admindata: data,
+      sessiondata : req.session
     });
-  // })
+   })
 });
 
 router.get('/admins', function (req, res, next) {
@@ -51,7 +51,7 @@ router.get('/drivers', function (req, res, next) {
   .sort('date_created')
   .exec(function (err, drivers) {
     if (err) { next(err) }
-    console.log('drivers:', drivers);
+    //console.log('drivers:', drivers);
     res.json(drivers)
   })
 });

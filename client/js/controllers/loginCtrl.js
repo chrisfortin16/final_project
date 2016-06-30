@@ -15,8 +15,8 @@ angular.module('fortinsApp').controller('loginCtrl',
         console.log("Successful! Admin Authenticated", data.passport)
       })
       .error(function(err) {
-        console.log("Failure! Admin Not Authenticated", err)
         $location.path('/');
+        console.log("Failure! Admin Not Authenticated", err)
       })
     }
   }]);

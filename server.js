@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var mongoose = require('mongoose');
 var morgan = require('morgan');
 var db = require('./db');
 const session = require('express-session');
@@ -28,10 +27,11 @@ function(req, email, password, done){
      if(err)
        return err;
      return false;
-   });
- });
-}
+    });
+  });
+  }
 ));
+
 
 passport.serializeUser(function(admin, done) {
     done(null, admin);
@@ -44,20 +44,13 @@ passport.deserializeUser(function(admin, done) {
 // Init App
 var app = express();
 
-mongoose.createConnection('mongodb://localhost/DMSDB');
+db.createConnection('mongodb://localhost/DMSDB');
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated())
     return next();
   res.redirect('/');
 }
-
-// Redirects admin to homepage if they are authenticated
-// app.get('/home', isLoggedIn, function(req, res) {
-//   res.render('./client/partials/home.html', {
-//     admin : req.admin
-//   });
-// });
 
 // Define middleware
 app.use(cookieParser());
@@ -68,8 +61,9 @@ app.use(morgan('dev'));
 // Passport init
 app.use(require('express-session')({
     secret: 'keyboard cat',
-    store: new MongoStore({ mongooseConnection: mongoose.createConnection('mongodb://localhost/DMSDB/sessions')}),
+    store: new MongoStore({ mongooseConnection: db.createConnection('mongodb://localhost/DMSDB/sessions')}),
     proxy: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
     resave: true,
     saveUninitialized: true
 }));
@@ -86,6 +80,7 @@ app.get('/logout', function(req, res) {
 });
 
 app.post('/api/login', passport.authenticate('login'), function(req, res) {
+  console.log('Hello?')
   res.json(req.session)
 });
 

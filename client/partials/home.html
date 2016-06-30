@@ -1,8 +1,8 @@
 <header>
   <h1 class="homepage_h1">Company Name</h1>
   <div class="account_logout_links">
-    <a href="myaccount.html" title="link to my account page">My Account</a> |
-    <a href="home.html" title="link to logout page">Logout</a>
+    <a href="myaccount" title="link to my account page">My Account</a> |
+    <a href="logout" title="link to logout page">Logout</a>
   </div>
   <nav>
     <ul>
@@ -14,69 +14,91 @@
     </ul>
   </nav>
 </header>
-<h3>Quick Glance</h3>
-<h4 class="boarder_top">Stat One</h4>
-<h5 class="light_gray">More information on stat one</h5>
-<h4 class="boarder_top">Stat One</h4>
-<h5 class="light_gray">More information on stat one</h5>
-<h4 class="boarder_top">Stat One</h4>
-<h5 class="light_gray">More information on stat one</h5>
-<h4 class="boarder_top">Stat One</h4>
-<h5 class="light_gray">More information on stat one</h5>
-<h4 class="boarder_top">Stat One</h4>
-<h5 class="light_gray">More information on stat one</h5>
-<h4 class="boarder_top">Stat One</h4>
-<h5 class="light_gray">More information on stat one</h5>
-
+<section class="split">
+  <h3>Quick Glance</h3>
+  <h4 class="border_top">Stat One</h4>
+    <h5 class="light_gray">More information on stat one</h5>
+    <h5 class="light_gray">Some more information on stat one</h5>
+  <h4 class="border_top">Stat Two</h4>
+    <h5 class="light_gray">More information on stat two</h5>
+    <h5 class="light_gray">Some more information on stat two</h5>
+  <h4 class="border_top">Stat Three</h4>
+    <h5 class="light_gray">More information on stat three</h5>
+    <h5 class="light_gray">Some more information on stat three</h5>
+  <h4 class="border_top">Stat Four</h4>
+    <h5 class="light_gray">More information on stat four</h5>
+    <h5 class="light_gray">Some more information on stat four</h5>
+  <h4 class="border_top">Stat Five</h4>
+    <h5 class="light_gray">More information on stat five</h5>
+    <h5 class="light_gray">Some more information on stat five</h5>
+  <h4 class="border_top">Stat Six</h4>
+    <h5 class="light_gray">More information on stat six</h5>
+    <h5 class="light_gray">Some more information on stat six</h5>
+</section>
 <div id="chart">Google Chart</div>
 
 <section id="message_box">
-  <h4>Message to admins and employees</h4>
+  <h4>Message to admins and drivers</h4>
   <form>
     <div class="form-group">
-      <label>Subject</label>
-      <input type="text" class="form-control" name="subject">
+      <label class="message_box_label">Subject</label>
+      <input type="text" class="subject_message_box_input" name="subject">
     </div>
-    <div class="form-group"
-      <label>Message</label>
-      <input type="text" class="form-control" name="message">
+    <div class="form-group">
+      <label class="message_box_label">Message</label>
+      <input type="text" class="message_message_box_input" name="message">
     </div>
     <div>
-      <button type="submit" ng-disabled="disabled">Login</button>
+      <button type="submit" class="message_button" ng-disabled="disabled">Submit</button>
     </div>
   </form>
 </section>
 
-<div class="driver_column1">
+<div class="driver_column">
   <h3>Driver online Status</h3>
-  <h4>Driver Name</h4><h5>- Online</h5>
-  <h4>Driver Name</h4><h5>- Online</h5>
-  <h4>Driver Name</h4><h5>- Online</h5>
-  <h4>Driver Name</h4><h5>- Offline</h5>
-  <h4>Driver Name</h4><h5>- Offline</h5>
+  <ol class="custom_counter">
+    <li ng-repeat="driver in drivers">
+      <h4>
+        {{driver.first_name}}
+        {{driver.last_name}}
+        <span>- Offline</span>
+      </h4>
+    </li>
+  </ol>
 </div>
-<div class="admin_column2">
+<div class="admin_column">
   <h3>Admin online Status</h3>
-  <h4>Admin Name</h4><h5>- Online</h5>
-  <h4>Admin Name</h4><h5>- Online</h5>
-  <h4>Admin Name</h4><h5>- Offline</h5>
-  <h4>Admin Name</h4><h5>- Offline</h5>
-  <h4>Admin Name</h4><h5>- Offline</h5>
+  <ol class="custom_counter">
+    <li ng-repeat="admin in admins">
+      <h4>
+        {{admin.first_name}}
+        {{admin.last_name}}
+        <span>- Offline</span>
+      </h4>
+    </li>
+  </ol>
 </div>
 
 <section id="quick_stats">
   <h3>Customer quick stats</h3>
+  <div class="quick_stats_text">
+    <h4>Heading 1 <pre>Proin aliquet porta ac fermentum. Pellentesque in nisl ac ipsum.</pre></h4>
+    <h4>Heading 2 <pre>Mauris eget mauris vel purus ullamcorper posuere sed quis ex.</pre></h4>
+    <h4>Heading 3 <pre>Nulla facilisi. Nulla malesuada diam non mollis viverra.</pre></h4>
+    <h4>Heading 4 <pre>Mauris facilisis dolor sit amet sem molestie, at fringilla purus porttitor.</pre></h4>
+    <h4>Heading 5 <pre>Vestibulum commodo euismod venenatis lectus at venenatis.</pre></h4>
+  </div>
 </section>
 
 <section id="about_us">
   <h3>About Us</h3>
   <div class="third_1">
-    <p class="top_border"></p>
+    <p class="top_border">Proin ut laoreet enim. Fusce sit amet eleifend erat. Aenean a imperdiet lacus. Donec hendrerit odio non feugiat accumsan. Integer nec efficitur lorem. Nunc fermentum eu ipsum quis euismod. Donec facilisis egestas leo, nec hendrerit leo aliquam in. Suspendisse a magna mi.</p>
   </div>
   <div class="third_2">
-    <p class="top_border"></p>
+    <p class="top_border">Vestibulum sagittis at libero a congue. Curabitur mi ipsum, mattis in tempor ac, finibus non eros. Vestibulum eu tortor sed nulla faucibus congue id a nunc. Vivamus felis tellus, bibendum at urna nec, condimentum commodo diam. Praesent sit amet dapibus enim. Mauris tempor turpis at justo finibus facilisis.</p>
   </div>
   <div class="third_3">
-    <p class="top_border"></p>
+    <p class="top_border">Nunc non leo cursus, consequat ligula in, tempor diam. Maecenas sit amet tortor sit amet nisi congue malesuada. Pellentesque et consectetur elit. Maecenas ultrices lacus non tellus ullamcorper, sit amet vehicula erat fringilla. Donec mollis commodo tellus et ullamcorper. Curabitur et lobortis quam, vitae imperdiet lectus.</p>
   </div>
 </section>
