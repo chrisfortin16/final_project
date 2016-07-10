@@ -1,0 +1,25 @@
+<header>
+  <h1 class="homepage_h1">Company Name</h1>
+  <div class="account_logout_links">
+    <a href="myaccount" title="link to my account page">My Account</a> |
+    <a href="logout" title="link to logout page">Logout</a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="home" title="link to Homepage">Home</a></li>
+      <li><a href="drivers" title="link to Drivers page">Driver</a></li>
+      <li><a href="admins" title="link to Admins page">Admins</a></li>
+      <li><a href="customers" title="link to Customers page">Customers</a></li>
+      <li><a href="stats" title="link to Stats page">Stats</a></li>
+    </ul>
+  </nav>
+</header>
+<h2>Your Account</h2>
+<ul ng-repeat="admin in admins">
+  <li>{{admin.first_name}} {{admin.last_name}}</li>
+  <li>{{admin.gender}}</li>
+  <li>{{admin.phone_number}}</li>
+  <li>{{admin.street_address}}</li>
+  <li>{{admin.postal_code}}</li>
+  <li>{{admin.email}}</li>
+</ul>

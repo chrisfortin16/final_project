@@ -7,7 +7,8 @@ Clone the repository to your machine using ssh.
 ```
 $ git clone git@github.com:chrisfortin16/final_project.git
 $ npm install
-
+$ nodemon server to start the server
+$ mongo to start the database
 ```
 
 1. Fork it!

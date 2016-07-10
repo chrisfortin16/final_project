@@ -37,6 +37,23 @@ router.get('/home', function(req, res) {
    })
 });
 
+router.get('/:_id/myaccount/', function(req, res, next) {
+  var token = req.params._id;
+  Admin.findOne({_id: token},function (err, foundAdmin) {
+    if (err) console.log('====== ERROR =======', err)
+    res.json(foundAdmin)
+  });
+});
+
+// router.get('/myaccount', function(req, res) {
+//   Admin.find({uuid : req.session.passport.user.uuid}, function(err, data) {
+//     res.json({
+//       adminData: data,
+//       sessionData: req.session
+//     });
+//   })
+// });
+
 router.get('/admins', function (req, res, next) {
   Admin.find()
   .sort('date_created')
@@ -62,6 +79,15 @@ router.get('/customers', function (req, res, next) {
   .exec(function (err, customers) {
     if (err) { next(err) }
     res.json(customers)
+  })
+});
+
+router.get('/orders', function (req, res, next) {
+  Order.find()
+  .sort('first_name')
+  .exec(function (err, orders) {
+    if (err) { next(err) }
+    res.json(orders)
   })
 });
 

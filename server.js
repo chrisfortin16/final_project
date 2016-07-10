@@ -13,6 +13,7 @@ const MongoStore = require('connect-mongo')(session);
 var Admin = require('./server/models/admin.js');
 var Customer = require('./server/models/customer.js');
 var Driver = require('./server/models/drivers.js');
+var Order = require('./server/models/order.js');
 
 passport.use('login', new LocalStrategy({
  usernameField: 'email',

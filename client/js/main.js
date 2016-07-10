@@ -15,6 +15,10 @@ fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvid
       templateUrl: '../partials/home.html',
       controller: 'homeCtrl'
     })
+    .when('/home/myaccount/:_id', {
+      templateUrl: '../partials/myaccount.html',
+      controller: 'myaccountCtrl'
+    })
     .when('/admins', {
       templateUrl: '../partials/admins.html',
       controller: 'adminsCtrl'
@@ -29,7 +33,7 @@ fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvid
     })
     .when('/stats', {
       templateUrl: '../partials/stats.html',
-      controller: 'statsCtrl'
+      controller: 'ordersCtrl'
     })
     .otherwise('/')
 }])
