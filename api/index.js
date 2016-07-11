@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var Admin = require('../server/models/admin.js');
 var Driver = require('../server/models/drivers.js');
 var Customer = require('../server/models/customer.js');
+var Order = require('../server/models/order.js');
 
 router.post('/register', function(req, res) {
   var admin = new Admin({
@@ -68,7 +69,6 @@ router.get('/drivers', function (req, res, next) {
   .sort('date_created')
   .exec(function (err, drivers) {
     if (err) { next(err) }
-    //console.log('drivers:', drivers);
     res.json(drivers)
   })
 });
@@ -84,7 +84,7 @@ router.get('/customers', function (req, res, next) {
 
 router.get('/orders', function (req, res, next) {
   Order.find()
-  .sort('first_name')
+  .sort('_id')
   .exec(function (err, orders) {
     if (err) { next(err) }
     res.json(orders)

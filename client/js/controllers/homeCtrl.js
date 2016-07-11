@@ -1,6 +1,6 @@
 
 // Home Controller
-angular.module('fortinsApp').controller('homeCtrl', ["$scope", "$location", "$http", 'DriverSvc', 'AdminSvc', function ($scope, $location, $http, DriverSvc, AdminSvc) {
+angular.module('fortinsApp').controller('homeCtrl', ["$scope", "$location", "$http", 'DriverSvc', 'AdminSvc', 'OrderSvc', function ($scope, $location, $http, DriverSvc, AdminSvc, OrderSvc) {
   $http.get('/api/home')
   .then(function(data) {
     console.log("Home Session Data:",  data.data.sessiondata.passport.user);
@@ -19,6 +19,11 @@ angular.module('fortinsApp').controller('homeCtrl', ["$scope", "$location", "$ht
    DriverSvc.fetch()
    .then(function (drivers) {
      $scope.drivers = drivers
+   });
+
+   OrderSvc.fetch()
+   .then(function (orders) {
+     $scope.orders = orders;
    });
 
 }]);

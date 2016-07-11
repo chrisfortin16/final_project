@@ -232,6 +232,17 @@ nav a:active{
   width: 500px;
   float: left;
 }
+.split ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.split h4{
+  padding: 5px 0 5px 10px;
+}
+.split h5{
+  padding: 5px 0 0 20px;
+}
 .border_top{
   border-top: solid 2px #666666;
   padding-top: 10px;
