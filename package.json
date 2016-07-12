@@ -7,6 +7,10 @@
   },
   "description": "Fortins delivery managment service",
   "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrisfortin16/final_project.git"
