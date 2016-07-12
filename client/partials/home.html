@@ -16,12 +16,12 @@
 </header>
 <section class="split">
   <h3>Quick Glance</h3>
-  <ul ng-repeat="order in orders | orderBy:timestampCreated| limitTo: 5">
+  <ul ng-repeat="order in orders | orderBy:'needby' | limitTo: 5">
     <li>
       <h4 class="border_top">{{order.firstname}} {{order.lastname}}</h4>
         <h5 class="light_gray">{{order.address}} {{order.zip}}</h5>
         <h5 class="light_gray">{{order.amount}} {{order.amountType}} {{order.orderType}}</h5>
-        <h5 class="light_gray"><b>NeedBy</b> - {{order.needby}}</h5>
+        <h5 class="light_gray"><b>Need by</b> - {{order.needby | date : "medium"}}</h5>
     </li>
   </ul>
 </section>
@@ -71,12 +71,8 @@
 
 <section id="quick_stats">
   <h3>Customer Messages</h3>
-  <div ng-repeat="order in orders | orderBy:maintenance| limitTo: 5" class="quick_stats_text">
+  <div ng-repeat="order in orders | orderBy:'-maintenance' | limitTo: 5" class="quick_stats_text">
     <h4>{{order.firstname}} {{order.lastname}} <pre>{{order.message}}</pre></h4>
-    <!-- <h4>Heading 2 <pre>Mauris eget mauris vel purus ullamcorper posuere sed quis ex.</pre></h4>
-    <h4>Heading 3 <pre>Nulla facilisi. Nulla malesuada diam non mollis viverra.</pre></h4>
-    <h4>Heading 4 <pre>Mauris facilisis dolor sit amet sem molestie, at fringilla purus porttitor.</pre></h4>
-    <h4>Heading 5 <pre>Vestibulum commodo euismod venenatis lectus at venenatis.</pre></h4> -->
   </div>
 </section>
 

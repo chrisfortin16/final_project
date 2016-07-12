@@ -3,8 +3,8 @@
 angular.module('fortinsApp').controller('homeCtrl', ["$scope", "$location", "$http", 'DriverSvc', 'AdminSvc', 'OrderSvc', function ($scope, $location, $http, DriverSvc, AdminSvc, OrderSvc) {
   $http.get('/api/home')
   .then(function(data) {
-    console.log("Home Session Data:",  data.data.sessiondata.passport.user);
-    console.log("Home Admin Data:", data.data);
+    //console.log("Home Session Data:",  data.data.sessiondata.passport.user);
+    //console.log("Home Admin Data:", data.data);
   })
   .catch(function(err) {
     console.log(err);
