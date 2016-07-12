@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var morgan = require('morgan');
-var Promise = require('bluebird');
 var db = require('./db');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
