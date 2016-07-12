@@ -1,6 +1,10 @@
 {
   "name": "final_project",
   "version": "1.0.0",
+  "engines": {
+    "node": "5.9.1",
+    "npm": "3.8.3"
+  },
   "description": "Fortins delivery managment service",
   "main": "index.js",
   "scripts": {
