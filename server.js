@@ -3,7 +3,6 @@ var logger = require('morgan');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var bluebird = require('bluebird');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var morgan = require('morgan');
@@ -33,7 +32,6 @@ function(req, email, password, done){
   });
   }
 ));
-
 
 passport.serializeUser(function(admin, done) {
     done(null, admin);
