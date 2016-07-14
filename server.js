@@ -45,7 +45,7 @@ passport.deserializeUser(function(admin, done) {
 // Init App
 var app = express();
 
-db.createConnection(process.env.MONGODB_URI);
+db.createConnection(process.env.MONGODB_URI || 'mongodb://localhost/DMSDB/');
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated())
@@ -62,7 +62,7 @@ app.use(morgan('dev'));
 // Passport init
 app.use(require('express-session')({
     secret: 'keyboard cat',
-    store: new MongoStore({ mongooseConnection: db.createConnection(process.env.MONGODB_URI)}),
+    store: new MongoStore({ mongooseConnection: db.createConnection(process.env.MONGODB_URI || 'mongodb://localhost/DMSDB/sessions')}),
     proxy: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
     resave: true,
@@ -81,7 +81,6 @@ app.get('/logout', function(req, res) {
 });
 
 app.post('/api/login', passport.authenticate('login'), function(req, res) {
-  console.log('Hello?')
   res.json(req.session)
 });
 
