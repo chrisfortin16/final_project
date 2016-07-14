@@ -3,10 +3,10 @@ var passport = require('passport');
 var router = require('express').Router();
 var bodyParser = require('body-parser');
 
-var Admin = require('../server/models/Admin.js');
-var Driver = require('../server/models/Drivers.js');
-var Customer = require('../server/models/Customer.js');
-var Order = require('../server/models/Order.js');
+var Admin = require('../models/Admin.js');
+var Driver = require('../models/Drivers.js');
+var Customer = require('../models/Customer.js');
+var Order = require('../models/Order.js');
 
 router.post('/register', function(req, res) {
   var admin = new Admin({

@@ -10,10 +10,10 @@ var db = require('./db');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-var Admin = require('/server/models/Admin.js');
-var Customer = require('/server/models/Customer.js');
-var Driver = require('/server/models/Drivers.js');
-var Order = require('/server/models/Order.js');
+var Admin = require('./models/Admin.js');
+var Customer = require('./models/Customer.js');
+var Driver = require('./models/Drivers.js');
+var Order = require('./models/Order.js');
 
 passport.use('login', new LocalStrategy({
  usernameField: 'email',
