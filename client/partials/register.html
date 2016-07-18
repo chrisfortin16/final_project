@@ -14,7 +14,7 @@
     </ul>
   </nav>
 </header>
-<h1>Register a new user</h1>
+<h2 class="register_title">Register a new user</h2>
 <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
 <form class="form" action="/" ng-submit="register()">
   <div class="form-group">
@@ -56,6 +56,6 @@
       <input type="radio" class="form-control" name="postion" value="Driver" ng-model="position" required>Driver
     </div>
     <div>
-      <button type="submit" ng-disabled="disabled">Register</button>
+      <button class="register_button" type="submit" ng-disabled="disabled">Register</button>
     </div>
 </form>

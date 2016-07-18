@@ -46,8 +46,8 @@ router.get('/home', function(req, res) {
 //   });
 // });
 
-router.get('/myaccount', function(req, res) {
-  Admin.find({uuid : req.session.passport.user.uuid}, function(err, data) {
+router.get('/myaccount/:_id', function(req, res) {
+  Admin.findOne({uuid : req.session.passport.user.uuid}, function(err, data) {
     res.json({
       adminData: data,
       sessionData: req.session
