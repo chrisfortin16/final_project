@@ -3,4 +3,5 @@ _old
 .DS_Store
 .env
 .bowerrc
-bower_components
+
+client/bower

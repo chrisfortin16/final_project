@@ -1,15 +1,29 @@
-# Delivery Management Service Management Website
+# Fortins Delivery/Courier Management Service
 
-##Chris Fortins' Final Project
+## Developer Chris Fortin
 
-## Setting Up
-Clone the repository to your machine using ssh.
+### Setting Up
+To run locally clone the repository to your folder using ssh.
 ```
 $ git clone git@github.com:chrisfortin16/final_project.git
 $ npm install
-$ nodemon server to start the server
+$ npm start to start the server
 $ mongo to start the database
 ```
+
+## live heroku site
+https://fortins-management-service.herokuapp.com/
+
+## Branches
+
+### Production
+https://github.com/chrisfortin16/final_project/tree/master
+
+### Staging
+https://github.com/chrisfortin16/final_project/tree/staging
+
+## Testing/Debug
+https://github.com/chrisfortin16/final_project/tree/debug
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`

@@ -15,7 +15,7 @@ fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvid
       templateUrl: '../partials/home.html',
       controller: 'homeCtrl'
     })
-    .when('/myaccount/:_id', {
+    .when('/myaccount', {
       templateUrl: '../partials/myaccount.html',
       controller: 'myaccountCtrl'
     })

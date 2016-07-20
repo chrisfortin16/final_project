@@ -1,6 +1,6 @@
 {
   "name": "final_project",
-  "description": "Fortins delivery managment service",
+  "description": "Fortins Delivery/Courier Management Service",
   "main": "index.js",
   "authors": [
     "Chris Fortin"

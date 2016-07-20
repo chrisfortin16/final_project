@@ -38,20 +38,18 @@ router.get('/home', function(req, res) {
    })
 });
 
-// router.get('/:_id/myaccount/', function(req, res, next) {
-//   var token = req.params._id;
-//   Admin.findOne({_id: token},function (err, foundAdmin) {
-//     if (err) console.log('====== ERROR =======', err)
-//     res.json(foundAdmin)
-//   });
-// });
-
-router.get('/myaccount/:_id', function(req, res) {
-  Admin.findOne({uuid : req.session.passport.user.uuid}, function(err, data) {
+router.get('/myaccount', function(req, res) {
+  Admin.find({_id: req.session.passport.admin._id},function (err, foundAdmin) {
     res.json({
-      adminData: data,
-      sessionData: req.session
+      sessionData: reg.session
     });
+  })
+});
+
+router.post('/updateAdmin', function(req, res) {
+  Admin.findOneAndUpdate({_id : req.body._id}, {$set:{_id: req.session.passport.admin._id, email: req.body.email, password: req.body.password, first_name: req.body.first_name, last_name: req.body.last_name, street_address: req.body.street_address, postal_code: req.body.postal_code, phone_number: req.body.phone_number}}, {new: true}, function(err, data) {
+    if(err) { console.log("error here", err); }
+    console.log("data updated", data);
   })
 });
 
@@ -59,7 +57,7 @@ router.get('/admins', function (req, res, next) {
   Admin.find()
   .sort('date_created')
   .exec(function (err, admins) {
-    if (err) { next(err) }
+    if (err) { return next(err); }
     res.json(admins)
   })
 });
@@ -68,7 +66,7 @@ router.get('/drivers', function (req, res, next) {
   Driver.find()
   .sort('date_created')
   .exec(function (err, drivers) {
-    if (err) { next(err) }
+    if (err) { return next(err); }
     res.json(drivers)
   })
 });
@@ -77,7 +75,7 @@ router.get('/customers', function (req, res, next) {
   Customer.find()
   .sort('last_name')
   .exec(function (err, customers) {
-    if (err) { next(err) }
+    if (err) { return next(err); }
     res.json(customers)
   })
 });
@@ -86,7 +84,7 @@ router.get('/orders', function (req, res, next) {
   Order.find()
   .sort('_id')
   .exec(function (err, orders) {
-    if (err) { next(err) }
+    if (err) { return next(err); }
     res.json(orders)
   })
 });

@@ -1,5 +1,5 @@
 <header>
-  <h1 class="homepage_h1">Company Name</h1>
+  <h1 class="homepage_h1">Fortins Management Service</h1>
   <div class="account_logout_links">
     <a href="home/myaccount" title="link to my account page">My Account</a> |
     <a href="logout" title="link to logout page">Logout</a>
@@ -7,10 +7,10 @@
   <nav>
     <ul>
       <li><a href="home" title="link to Homepage">Home</a></li>
-      <li><a href="drivers" title="link to Drivers page">Driver</a></li>
+      <li><a href="drivers" title="link to Drivers page">Drivers</a></li>
       <li><a href="admins" title="link to Admins page">Admins</a></li>
       <li><a href="customers" title="link to Customers page">Customers</a></li>
-      <li><a href="stats" title="link to Stats page">Stats</a></li>
+      <li><a href="stats" title="link to Orders page">Orders</a></li>
     </ul>
   </nav>
 </header>
@@ -69,23 +69,3 @@
     </li>
   </ol>
 </div>
-
-<section id="quick_stats">
-  <h3>Customer Messages</h3>
-  <div ng-repeat="order in orders | orderBy:'-maintenance' | limitTo: 5" class="quick_stats_text">
-    <h4>{{order.firstname}} {{order.lastname}} <pre>{{order.message}}</pre></h4>
-  </div>
-</section>
-
-<section id="about_us">
-  <h3>About Us</h3>
-  <div class="third_1">
-    <p class="top_border">This delivery or courier management service was designed to provide your company with the latest in web technology available to you at the lowest cost possible. We provide real time data exchange between your place of business, your employees and your costumers all with one service. </p>
-  </div>
-  <div class="third_2">
-    <p class="top_border">With our customer website, your users will have the ability to easily order what they need from anywhere with an internet connection. With the order placed the information for that order will arrive on your management website where you can see the transactions happening in real time. From there you can send one of your drivers out following the directions from our mobile driver application giving them turn by turn directions to the destination.</p>
-  </div>
-  <div class="third_3">
-    <p class="top_border">Your employees will have their job simplified 10 fold by using this service. The admins will have the ability to watch every aspect of the business transactions happen in real time from one management website. They will see the orders come in from the customer website, and will have the ability to send drivers out to fill the orders placed. Keeping your business moving like a well oiled machine.</p>
-  </div>
-</section>
