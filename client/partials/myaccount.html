@@ -15,11 +15,16 @@
   </nav>
 </header>
 <h2>Your Account</h2>
-<ul ng-repeat="admin in admins">
-  <li>{{admin.first_name}} {{admin.last_name}}</li>
-  <li>{{admin.gender}}</li>
-  <li>{{admin.phone_number}}</li>
-  <li>{{admin.street_address}}</li>
-  <li>{{admin.postal_code}}</li>
-  <li>{{admin.email}}</li>
-</ul>
+<div class="myaccount_styles">
+  <li><strong>First Name:</strong> {{first_name}}</li>
+  <li><strong>Last Name:</strong> {{last_name}}</li>
+  <li><strong>Email:</strong> {{email}}</li>
+  <li><strong>Password:</strong> {{password}}</li>
+  <li><strong>Gender:</strong> {{gender}}</li>
+  <li><strong>Phone:</strong> {{phone_number}}</li>
+  <li><strong>Street Address:</strong> {{street_address}}</li>
+  <li><strong>Postal Code:</strong> {{postal_code}}</li>
+  <li><strong>Position:</strong> {{position}}</li>
+  <li><strong>Date Created:</strong> {{date_created}}</li>
+</div>
+<button type="button" class="updateAdminButton"><a href="updateAdmin" title="link to update admin page">Edit Data</a></button>

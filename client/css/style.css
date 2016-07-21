@@ -1,4 +1,3 @@
-
 body{
   background: #fff;
   margin: 0;
@@ -9,7 +8,7 @@ body{
   padding: 0;
 }
 /*login page*/
-#section1{
+#top_landing_page{
   width: 100%;
   margin: 0;
   padding: 0;
@@ -94,13 +93,13 @@ p{
   text-align: center;
   line-height: auto;
   color: #ffffff;
-  background-color: #111111;
+  background-color: #1f77b4;
   border: none;
 }
 .login_button:hover{
-  color: #666666;
+  color: #ffcc9a;
 }
-#section2{
+#service_overview{
   width: 100%;
   margin-top: 100px;
   padding: 0;
@@ -144,11 +143,37 @@ p{
   display: inline;
   padding: 0 0 20px 0;
 }
+.contact_1{
+  width: 300px;
+  float: left;
+  display: inline;
+  padding: 0 0 50px 0;
+  text-align: center;
+}
+.contact_2{
+  width: 300px;
+  float: right;
+  display: inline;
+  margin-left: 63px;
+  padding: 0 0 50px 0;
+  text-align: center;
+}
+.contact_3{
+  width: 300px;
+  float: right;
+  display: inline;
+  padding: 0 0 50px 0;
+  text-align: center;
+}
 #section3{
   width: 100%;
-  margin-top: 100px;
+  margin-top: 150px;
   padding: 0;
   clear: both;
+}
+#register{
+  clear: both;
+  padding-top: 50px;
 }
 .bottom_border{
   text-align: center;
@@ -181,9 +206,6 @@ p{
   border: solid 2px #666666;
   padding: 5px;
 }
-/*End of Login page*/
-
-/*Home page*/
 .homepage_h1{
   float: left;
   display: block;
@@ -202,6 +224,12 @@ p{
 .account_logout_links a:hover{
   color: #666666;
   text-decoration: underline;
+}
+.myaccount_styles{
+  list-style-type: none;
+  font-size: 18px;
+  font-family: arial;
+  padding: 5px;
 }
 nav{
   clear: both;
@@ -253,7 +281,6 @@ nav a:active{
   height: 500px;
   float: right;
   display: inline;
-  background-color: lightgray;
   margin: 50px 0 0 0;
 }
 #message_box{
@@ -289,7 +316,7 @@ nav a:active{
   text-align: center;
   line-height: auto;
   color: #ffffff;
-  background-color: #111111;
+  background-color: #1f77b4;
   border: none;
 }
 .message_button:hover{
@@ -390,7 +417,7 @@ td{
   text-align: center;
   line-height: auto;
   color: #ffffff;
-  background-color: #111111;
+  background-color: #1f77b4;
   border: none;
 }
 .register_button:hover{

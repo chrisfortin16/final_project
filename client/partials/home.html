@@ -1,7 +1,7 @@
 <header>
   <h1 class="homepage_h1">Fortins Management Service</h1>
   <div class="account_logout_links">
-    <a href="home/myaccount" title="link to my account page">My Account</a> |
+    <a href="myaccount" title="link to my account page">My Account</a> |
     <a href="logout" title="link to logout page">Logout</a>
   </div>
   <nav>
@@ -26,7 +26,9 @@
   </ul>
 </section>
 
-<div id="chart"></div>
+<div ng-controller="homeCtrl" id="chart">
+  <nvd3 options="options" data="data"></nvd3>
+</div>
 
 <section id="message_box">
   <h4>Message to admins and drivers</h4>

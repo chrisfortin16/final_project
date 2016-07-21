@@ -1,19 +1,11 @@
 <header>
   <h1 class="homepage_h1">Fortins Management Service</h1>
   <div class="account_logout_links">
-    <a href="home" title="link to my account page">My Account</a> |
-    <a href="login" title="link to logout page">Logout</a>
+    <a href="login" title="link to logout page">Login</a> |
+    <a href="contact" title="link to contact page">Contact Us</a>
   </div>
-  <nav>
-    <ul>
-      <li><a href="home" title="link to Homepage">Home</a></li>
-      <li><a href="drivers" title="link to Drivers page">Drivers</a></li>
-      <li><a href="admins" title="link to Admins page">Admins</a></li>
-      <li><a href="customers" title="link to Customers page">Customers</a></li>
-      <li><a href="stats" title="link to Orders page">Orders</a></li>
-    </ul>
-  </nav>
 </header>
+<section id="register">
 <h2 class="register_title">Register a new user</h2>
 <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
 <form class="form" action="/" ng-submit="register()">
@@ -59,3 +51,4 @@
       <button class="register_button" type="submit" ng-disabled="disabled">Register</button>
     </div>
 </form>
+</section>

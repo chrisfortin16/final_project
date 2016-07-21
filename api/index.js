@@ -39,17 +39,23 @@ router.get('/home', function(req, res) {
 });
 
 router.get('/myaccount', function(req, res) {
-  Admin.find({_id: req.session.passport.admin._id},function (err, foundAdmin) {
     res.json({
-      sessionData: reg.session
+      sessionData: req.session
     });
-  })
+});
+
+router.get('/updateAdmin', function(req, res) {
+  res.json({
+    sessionData: req.session
+  });
 });
 
 router.post('/updateAdmin', function(req, res) {
-  Admin.findOneAndUpdate({_id : req.body._id}, {$set:{_id: req.session.passport.admin._id, email: req.body.email, password: req.body.password, first_name: req.body.first_name, last_name: req.body.last_name, street_address: req.body.street_address, postal_code: req.body.postal_code, phone_number: req.body.phone_number}}, {new: true}, function(err, data) {
-    if(err) { console.log("error here", err); }
-    console.log("data updated", data);
+  Admin.findOneAndUpdate({_id: req.session.passport.user._id}, {$set: {first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, password: req.body.password, street_address: req.body.street_address, postal_code: req.body.postal_code, phone_number: req.body.phone_number}}, {new: true}, function(err, data) {
+    if (err) { return next(err); }
+    else {
+      console.log("Updated Info");
+    }
   })
 });
 
@@ -88,6 +94,5 @@ router.get('/orders', function (req, res, next) {
     res.json(orders)
   })
 });
-
 
 module.exports = router;

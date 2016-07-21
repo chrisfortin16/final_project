@@ -1,4 +1,4 @@
-var fortinsApp = angular.module('fortinsApp', ['ngRoute']);
+var fortinsApp = angular.module('fortinsApp', ['ngRoute', 'nvd3']);
 
 fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
@@ -18,6 +18,14 @@ fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvid
     .when('/myaccount', {
       templateUrl: '../partials/myaccount.html',
       controller: 'myaccountCtrl'
+    })
+    .when('/updateAdmin', {
+      templateUrl: '../partials/updateAdmin.html',
+      controller: 'updateAdminCtrl'
+    })
+    .when('/contact', {
+      templateUrl: '../partials/contact.html',
+      controller: 'contactCtrl'
     })
     .when('/admins', {
       templateUrl: '../partials/admins.html',
