@@ -1,4 +1,4 @@
-var fortinsApp = angular.module('fortinsApp', ['ngRoute']);
+var fortinsApp = angular.module('fortinsApp', ['ngRoute', 'nvd3']);
 
 fortinsApp.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
