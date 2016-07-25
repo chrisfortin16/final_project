@@ -372,8 +372,6 @@ pre{
   border-top: solid 2px #666666;
   padding-top: 10px;
 }
-
-/*Customers Admin and Drivers page styles*/
 table{
   width:100%;
   padding: 5px;
@@ -422,6 +420,19 @@ td{
 }
 .register_button:hover{
   color: #666666;
+}
+.update_data{
+  padding: 15px 0 0 7px;
+}
+.updateAdmin_button{
+  margin: 15px 0 0 0;
+  width: 96px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  line-height: auto;
+  color: #ffffff;
+  background-color: #1f77b4;
 }
 footer{
   margin: 0 auto;
