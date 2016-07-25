@@ -10,11 +10,13 @@ var db = require('./db');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
+// Require models
 var Admin = require('./models/Admin.js');
 var Customer = require('./models/Customer.js');
 var Driver = require('./models/Drivers.js');
 var Order = require('./models/Order.js');
 
+// Passport authenticate
 passport.use('login', new LocalStrategy({
  usernameField: 'email',
  passwordField: 'password',
@@ -44,6 +46,7 @@ passport.deserializeUser(function(admin, done) {
 // Init App
 var app = express();
 
+// Database connection local and mlab
 db.createConnection(process.env.MONGODB_URI || 'mongodb://localhost/DMSDB/');
 
 function isLoggedIn(req, res, next) {
@@ -90,6 +93,7 @@ app.get('*', function(req, res, next){
   res.sendFile(__dirname + "/client/index.html");
 });
 
+// Start the server and console log the port
 var server = app.listen(process.env.PORT || 4000, function(){
   console.log("running on port", server.address().port);
 });

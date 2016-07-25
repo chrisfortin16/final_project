@@ -1,4 +1,4 @@
-// Employee models
+// Admins models
 var mongoose = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
 
