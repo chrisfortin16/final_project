@@ -1,5 +1,5 @@
 // Home Controller
-angular.module('fortinsApp', ['nvd3']).controller('homeCtrl', ["$scope", "$location", "$http", 'DriverSvc', 'AdminSvc', 'OrderSvc', function ($scope, $location, $http, DriverSvc, AdminSvc, OrderSvc) {
+angular.module('fortinsApp').controller('homeCtrl', ["$scope", "$location", "$http", 'DriverSvc', 'AdminSvc', 'OrderSvc', function ($scope, $location, $http, DriverSvc, AdminSvc, OrderSvc) {
   $http.get('/api/home')
   .then(function(data) {
   })
