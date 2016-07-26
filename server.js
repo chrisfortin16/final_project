@@ -77,6 +77,9 @@ app.use(passport.session());
 // Set Static Folder
 app.use(express.static('client'));
 
+// Set Bower folder
+app.use('/bower', express.static('client/bower'));
+
 app.get('/logout', function(req, res) {
   req.logout();
   res.send(200);
