@@ -4,7 +4,7 @@ body{
 }
 header img{
   float: left;
-  position:absolute;
+  position: fixed;
 }
 .container{
   width: 1024px;
