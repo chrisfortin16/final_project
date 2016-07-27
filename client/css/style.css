@@ -3,8 +3,12 @@ body{
   margin: 0;
 }
 header img{
-  float: right;
-  position: fixed;
+  float: left;
+  position: absolute;
+}
+.header_logo{
+  float: left;
+  position: relative;
 }
 .container{
   width: 1024px;
