@@ -3,7 +3,7 @@ body{
   margin: 0;
 }
 header img{
-  float: left;
+  float: right;
   position: fixed;
 }
 .container{
