@@ -2,6 +2,10 @@ body{
   background: #fff;
   margin: 0;
 }
+header img{
+  float: left;
+  position:absolute;
+}
 .container{
   width: 1024px;
   margin: 0 auto;
@@ -210,6 +214,14 @@ p{
   display: block;
   clear: both;
 }
+.main_h1{
+  float: left;
+  display: block;
+  clear: both;
+  padding-left: 210px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
 .account_logout_links{
   float: right;
     margin: 50px 0 0 0;
@@ -319,7 +331,7 @@ nav a:active{
   border: none;
 }
 .message_button:hover{
-  color: #666666;
+  color: #ffcc9a;
 }
 .custom_counter{
   font-family: arial;
@@ -374,6 +386,7 @@ pre{
 table{
   width:100%;
   padding: 5px;
+  margin-top: 10px;
 }
 tr{
   height: 25px;
@@ -389,8 +402,20 @@ td{
   padding: 2px;
 }
 .register_link{
-  padding: 0 0 20px 0;
-  margin: 0 0 20px 0;
+  width: 406px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  line-height: auto;
+  color: #ffffff;
+  background-color: #1f77b4;
+  border: none;
+  margin: 0 0 25px 0;
+  padding: 5px;
+}
+.register_link:hover{
+  color: #ffcc9a;
+  text-decoration: underline;
 }
 .register_title{
   margin: 0 auto;
@@ -418,7 +443,7 @@ td{
   border: none;
 }
 .register_button:hover{
-  color: #666666;
+  color: #ffcc9a;
 }
 .update_data{
   padding: 15px 0 0 7px;
@@ -435,9 +460,12 @@ td{
 }
 footer{
   margin: 0 auto;
-  height: 30px;
+  height: 75px;
   text-align: center;
   font-size: 16px;
   font-family: Arial;
   clear: both;
+  background-image: url('../images/footer.png');
+  background-repeat: repeat-x;
+  background-position: center bottom;
 }
