@@ -16,7 +16,7 @@
   </nav>
 </header>
 <section class="split">
-  <h3>Quick Glance</h3>
+  <h3>Recent Orders</h3>
   <ul ng-repeat="order in orders | orderBy:'needby' | limitTo: 5">
     <li>
       <h4 class="border_top">{{order.firstname}} {{order.lastname}}</h4>
@@ -34,11 +34,11 @@
 <section id="message_box">
   <h4>Message to admins and drivers</h4>
   <form>
-    <div class="form-group">
+    <div class="message-form-group">
       <label class="message_box_label">Subject</label>
       <input type="text" class="subject_message_box_input" name="subject">
     </div>
-    <div class="form-group">
+    <div class="message-form-group">
       <label class="message_box_label">Message</label>
       <input type="text" class="message_message_box_input" name="message">
     </div>

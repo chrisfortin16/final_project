@@ -20,16 +20,16 @@
 <table>
   <tr>
     <th>Full Name</th>
-    <th>Order Timestamp</th>
+    <th class="display_timestamp">Order Timestamp</th>
     <th>Address</th>
     <th>Order Info</th>
-    <th>Needby Date</th>
+    <th class="display_needby">Needby Date</th>
   </tr>
   <tr ng-repeat="order in orders">
-    <td>{{order.firstname}} {{order.lastname}}</td>
-    <td>{{order.timestampCreated | date : "medium"}}</td>
+    <td><a href="#" alt="link to customer orders account">{{order.firstname}} {{order.lastname}}</a></td>
+    <td class="display_timestamp">{{order.timestampCreated | date : "medium"}}</td>
     <td>{{order.address}} {{order.zip}}</td>
     <td>{{order.orderType | uppercase}} {{order.amount}} {{order.amountType}}</td>
-    <td>{{order.needby | date : "medium"}}</td>
+    <td class="display_needby">{{order.needby | date : "medium"}}</td>
   </tr>
 </table>

@@ -20,19 +20,19 @@
 <table>
   <tr>
     <th>Full Name</th>
-    <th>Gender</th>
-    <th>Phone Number</th>
+    <th class="display_gender">Gender</th>
+    <th class="display_phone">Phone Number</th>
     <th>Street Address</th>
-    <th>Zip Code</th>
-    <th>Email</th>
+    <th class="display_zip">Zip Code</th>
+    <th class="display_email">Email</th>
   </tr>
   <tr ng-repeat="customer in customers">
-    <td><a href="myaccount" alt="link to customer account page">{{customer.first_name}} {{customer.last_name}}</a></td>
-    <td>{{customer.gender}}</td>
-    <td>{{customer.phone_number}}</td>
+    <td><a href="#" alt="link to customer account page">{{customer.first_name}} {{customer.last_name}}</a></td>
+    <td class="display_gender">{{customer.gender}}</td>
+    <td class="display_phone">{{customer.phone_number}}</td>
     <td>{{customer.street_address}}</td>
-    <td>{{customer.postal_code}}</td>
-    <td>{{customer.email}}</td>
+    <td class="display_zip">{{customer.postal_code}}</td>
+    <td class="display_email">{{customer.email}}</td>
   </tr>
 </table>
 

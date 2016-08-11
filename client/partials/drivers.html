@@ -20,18 +20,18 @@
 <table>
   <tr>
     <th>Full Name</th>
-    <th>Gender</th>
-    <th>Deliveries Made</th>
+    <th class="display_gender">Gender</th>
+    <th class="display_deliveries">Deliveries Made</th>
     <th>Orders Todo</th>
     <th>Email</th>
-    <th>Date Created</th>
+    <th class="display_created">Date Created</th>
   </tr>
   <tr ng-repeat="driver in drivers">
-    <td><a href="myaccount" alt="link to drivers account">{{driver.first_name}} {{driver.last_name}}</a></td>
-    <td>{{driver.gender}}</td>
-    <td>{{driver.deliveries_made}}</td>
+    <td><a href="#" alt="link to drivers account">{{driver.first_name}} {{driver.last_name}}</a></td>
+    <td class="display_gender">{{driver.gender}}</td>
+    <td class="display_deliveries">{{driver.deliveries_made}}</td>
     <td>{{driver.orders_todo}}</td>
     <td>{{driver.email}}</td>
-    <td>{{driver.date_created}}</td>
+    <td class="display_created">{{driver.date_created}}</td>
   </tr>
 </table>

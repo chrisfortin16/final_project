@@ -38,9 +38,9 @@ $scope.options = {
 $scope.data = [{
   key: "Cumulative Return",
   values: [
-      { "label" : "Standard Oil" , "value" : 3600 },
-      { "label" : "Premium Oil" , "value" : 1200 },
-      { "label" : "Natural Gas" , "value" : 2700 },
+      { "label" : "Std Oil" , "value" : 3600 },
+      { "label" : "Prem Oil" , "value" : 1200 },
+      { "label" : "Natl Gas" , "value" : 2700 },
       { "label" : "Propane" , "value" : 2100 },
       { "label" : "Coal" , "value" : 1800 }
       ]
