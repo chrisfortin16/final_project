@@ -368,7 +368,7 @@ nav a:active{
   width: 800px;
 }
 span{
-  font-size: 14px;
+  font-size: 16px;
   color: lightgray;
 }
 pre{
@@ -489,7 +489,16 @@ footer{
   background-repeat: repeat-x;
   background-position: center bottom;
 }
-
+.last span.isOffline{
+  display: none;
+}
+.last span.isOnline{
+  display: inline;
+  color: #f29927;
+}
+span.isOnline{
+  display: none;
+}
 /*Media Queries*/
 @media (max-width: 1024px) {
   .container{

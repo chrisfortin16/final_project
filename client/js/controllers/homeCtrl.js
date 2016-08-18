@@ -7,7 +7,6 @@ angular.module('fortinsApp').controller('homeCtrl', ["$scope", "$location", "$ht
     console.log(err);
   });
 
-
 $scope.options = {
   chart: {
     type: 'discreteBarChart',

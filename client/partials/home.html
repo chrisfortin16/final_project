@@ -30,17 +30,20 @@
 <div ng-controller="homeCtrl" id="chart">
   <nvd3 options="options" data="data"></nvd3>
 </div>
-
 <section id="message_box">
-  <h4>Message to admins and drivers</h4>
-  <form>
+  <h4>Message to employees</h4>
+  <form enctype="text/plain" method="POST" action="mailto:?Subject=&body=Message%20goes%20here">
+    <div class="message-form-group">
+      <label class="message_box_label">Email</label>
+      <input type="email" class="subject_message_box_input" name="Email">
+    </div>
     <div class="message-form-group">
       <label class="message_box_label">Subject</label>
-      <input type="text" class="subject_message_box_input" name="subject">
+      <input type="text" class="subject_message_box_input" name="Subject">
     </div>
     <div class="message-form-group">
       <label class="message_box_label">Message</label>
-      <input type="text" class="message_message_box_input" name="message">
+      <input type="text" class="message_message_box_input" name="Message">
     </div>
     <div>
       <button type="submit" class="message_button" ng-disabled="disabled">Submit</button>
@@ -63,11 +66,12 @@
 <div class="admin_column">
   <h3>Admin online Status</h3>
   <ol class="custom_counter">
-    <li ng-repeat="admin in admins">
+    <li ng-repeat="admin in admins" ng-class="{'last':$last}">
       <h4>
         {{admin.first_name}}
         {{admin.last_name}}
-        <span>- Offline</span>
+        <span class="isOffline" ng-show="!isloggedin">- Offline</span>
+        <span class="isOnline" ng-hide="isloggedin">- Online</span>
       </h4>
     </li>
   </ol>
